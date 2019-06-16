@@ -1,11 +1,11 @@
 data "aws_iam_policy_document" "instances" {
   statement {
-    effect    = "Allow",
-    resources = ["*"],
+    effect    = "Allow"
+    resources = ["*"]
     actions   = [
       "ec2:DescribeInstances",
       "ec2:DescribeVolume*",
-    ],
+    ]
   }
 }
 
@@ -21,15 +21,15 @@ resource "aws_iam_role_policy_attachment" "instances_core" {
 
 data "aws_iam_policy_document" "cwlogs" {
   statement {
-    effect    = "Allow",
-    resources = ["*"],
+    effect    = "Allow"
+    resources = ["*"]
     actions   = [
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
       "logs:DescribeLogGroups",
       "logs:DescribeLogStreams",
-    ],
+    ]
   }
 }
 
